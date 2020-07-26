@@ -1,0 +1,48 @@
+<ion-header> 
+  <ion-toolbar>
+    <ion-title>send</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+ <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="dashboard"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	 <ion-card>
+      <ion-card-header>
+        Balance
+      </ion-card-header>
+      <ion-card-content>
+        {{balance}}
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+    	  <ion-grid>
+  <ion-row>
+    <ion-col>
+	       <ion-label>Phone No</ion-label>
+           <ion-input [(ngModel)]="phone_no" placeholder="Enter Phone No"></ion-input>
+        </ion-col>
+    </ion-row>
+    <ion-row>     
+        <ion-col>   
+	       <ion-label>Amount</ion-label>
+           <ion-input [(ngModel)]="amount" type="number" placeholder="Enter Amount"></ion-input>
+        </ion-col>
+    </ion-row>
+    <ion-row>    
+        <ion-col>   
+	      <ion-button color="primary" (click)="sendMoney();">Send</ion-button>
+	     </ion-col>
+	     </ion-row>
+	     </ion-grid> 
+   </ion-card>
+
+</ion-content>

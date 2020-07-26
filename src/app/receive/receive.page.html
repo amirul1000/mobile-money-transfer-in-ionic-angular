@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>receive</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="dashboard"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	  <ion-card>
+      <ion-card-header>
+            Release
+      </ion-card-header>     
+    </ion-card>
+
+    <ion-card>
+    	  <ion-grid>
+    	  	       <ion-row>
+						  <ion-col style="background-color:#FF0000">
+						    <ion-label>Phone No</ion-label>
+						  </ion-col>
+						  <ion-col style="background-color:#FF0000">
+						    <ion-label>Amount</ion-label>
+						  </ion-col>
+						  <ion-col style="background-color:#FF0000">
+						    <ion-label>Status</ion-label>
+						  </ion-col>
+						  <ion-col style="background-color:#FF0000">
+						      
+								   <ion-label>
+								    Action
+								   </ion-label>
+						   </ion-col>
+				    </ion-row>
+				  <ion-row *ngFor ="let each of receive">
+						  <ion-col>
+						    <ion-label>{{each.phone_no}}</ion-label>
+						  </ion-col>
+						  <ion-col>
+						    <ion-label>{{each.amount}}</ion-label>
+						  </ion-col>
+						  <ion-col>
+						    <ion-label>{{each.status}}</ion-label>
+						  </ion-col>
+						  <ion-col>
+						       <ion-item *ngIf="each.status=='pending'" button (click)="releaseMoney(each)" class="primary">
+								   <ion-label>
+								    Release
+								   </ion-label>
+							   </ion-item>
+						   </ion-col>
+				    </ion-row>
+			</ion-grid>
+    </ion-card>
+
+
+    
+
+</ion-content>
